@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+*{
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+   font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+body{
+  background-color: #111;
+  color: #ffffff;
+}
+
+
+#TaskList::-webkit-scrollbar{
+  display: none;
+}
+
+
+
+
+
+.hover:hover{
+background-color: rgb(11, 168, 200);
+}
+
+.hover2:hover{
+  background-color: rgba(253, 85, 85, 0.805);
+}
+
+
