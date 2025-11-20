@@ -3,15 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import './App.css'
 import App from './App.jsx'
-import Authcontext from './context/Authcontext.jsx'
-import Taskcontext from './context/Taskcontext.jsx'
+import AuthProvider from './context/AuthProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <Authcontext>
-    <Taskcontext>
-      <App/>
-    </Taskcontext>
-   </Authcontext>
+   <AuthProvider>
+    <App/>
+   </AuthProvider>
+      
+    
   </StrictMode>,
 )

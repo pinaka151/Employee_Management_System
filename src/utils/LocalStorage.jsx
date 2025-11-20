@@ -1,8 +1,16 @@
+// localStorage.clear()
 const employees = [
   {
     id: 1,
+    firstName: "samyak",
     email: "employee1@company.com",
     password: "123",
+    taskCounts: {
+      active: 1,
+      newTask: 2,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Prepare project report",
@@ -36,10 +44,18 @@ const employees = [
       }
     ]
   },
+
   {
     id: 2,
+    firstName: "bhardwaj",
     email: "employee2@company.com",
     password: "123",
+    taskCounts: {
+      active: 3,
+      newTask: 3,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Design homepage banner",
@@ -47,7 +63,7 @@ const employees = [
         date: "2025-11-10",
         category: "Design",
         active: true,
-        newTask: true,
+        newTask: false,
         completed: false,
         failed: false
       },
@@ -57,8 +73,8 @@ const employees = [
         date: "2025-11-11",
         category: "Frontend",
         active: false,
-        newTask: false,
-        completed: true,
+        newTask: true,
+        completed: false,
         failed: false
       },
       {
@@ -66,7 +82,7 @@ const employees = [
         description: "Review and implement suggestions from the client.",
         date: "2025-11-12",
         category: "Client Work",
-        active: false,
+        active: true,
         newTask: false,
         completed: false,
         failed: false
@@ -83,10 +99,18 @@ const employees = [
       }
     ]
   },
+
   {
     id: 3,
+    firstName: "raturi",
     email: "employee3@company.com",
     password: "123",
+    taskCounts: {
+      active: 1,
+      newTask: 4,
+      completed: 2,
+      failed: 1
+    },
     tasks: [
       {
         title: "API documentation",
@@ -140,10 +164,18 @@ const employees = [
       }
     ]
   },
+
   {
     id: 4,
+    firstName: "neeraj",
     email: "employee4@company.com",
     password: "123",
+    taskCounts: {
+      active: 1,
+      newTask: 5,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Test new login flow",
@@ -160,7 +192,7 @@ const employees = [
         description: "Upgrade project dependencies to latest versions.",
         date: "2025-11-10",
         category: "Maintenance",
-        active: false,
+        active: true,
         newTask: false,
         completed: true,
         failed: false
@@ -187,10 +219,18 @@ const employees = [
       }
     ]
   },
+
   {
     id: 5,
+    firstName: "raunac",
     email: "employee5@company.com",
     password: "123",
+    taskCounts: {
+      active: 1,
+      newTask: 6,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Write weekly blog post",
@@ -198,7 +238,7 @@ const employees = [
         date: "2025-11-09",
         category: "Content",
         active: true,
-        newTask: true,
+        newTask: false,
         completed: false,
         failed: false
       },
@@ -208,7 +248,7 @@ const employees = [
         date: "2025-11-10",
         category: "Marketing",
         active: false,
-        newTask: false,
+        newTask: true,
         completed: true,
         failed: false
       },
@@ -238,6 +278,7 @@ const employees = [
 
 const admin = {
   id: 101,
+  firstName: "vipin",
   email: "admin@company.com",
   password: "123"
 };
@@ -245,12 +286,16 @@ const admin = {
 
 
 
+
 export const setLocalStorage = ()=>{
-   localStorage.setItem('employee',JSON.stringify(employees))
+   localStorage.setItem('employees',JSON.stringify(employees))
    localStorage.setItem('Admin',JSON.stringify(admin))
 }
-export const getLocalStorage = ()=>{
- const data = localStorage.getItem('employee')
 
- console.log(JSON.parse(data))
+
+export const getLocalStorage = ()=>{
+      const employees = JSON.parse(localStorage.getItem('employees'))
+      const Admin = JSON.parse(localStorage.getItem('Admin'))
+      
+  return{employees,Admin}
 }

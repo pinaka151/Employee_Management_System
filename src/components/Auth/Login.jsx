@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
-const Login = () => {
+const Login = ({handlelogin}) => {
+
+
 
 const[Email,SetEmail] = useState('')
 const[Pass,SetPassword] = useState('')
@@ -9,8 +11,9 @@ const[Pass,SetPassword] = useState('')
 
   const SubmitHandler = (e)=>{
     e.preventDefault()
-    console.log("Email is : ",Email)
-    console.log("Password is : ",Pass)
+    handlelogin(Email,Pass)
+    // console.log("Email is : ",Email)
+    // console.log("Password is : ",Pass)
 
     SetEmail("")
     SetPassword("")
@@ -42,7 +45,7 @@ const[Pass,SetPassword] = useState('')
             type="password"
             placeholder='Enter Password'
           />
-          <button className='input mt-5  w-[100%] border-none p-2.5 text-gray-100 cursor-pointer rounded-[18px] outline-none bg-emerald-600 text-xl'> Log In </button>
+          <button className='  input mt-5  w-[100%] border-none p-2.5 text-gray-100 cursor-pointer rounded-[18px] outline-none bg-emerald-600 text-xl'> Log In </button>
         </form>
       </div>
     </div>
