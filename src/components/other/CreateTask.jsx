@@ -13,33 +13,38 @@ const [category, setCategory] = useState("")
 
 const [NewTask, setNewTask] = useState({})
 
- const submitHandler = (e) => {
+  const submitHandler = (e) => {
   e.preventDefault();
 
- 
-  const newTask = {
-    taskTitle,            
-    taskDescription,
-    taskDate,
-    category,
-    active: false,
-    newTask: true,
-    failed: false,
-    completed: false,
-  };
+  
+  // build local task with the canonical keys your UI reads
+const newTask = {
+  title: taskTitle,            // <-- use `title` (not taskTitle)
+  description: taskDescription,
+  date: taskDate,
+  category,
+  active: false,
+  newTask: true,
+  failed: false,
+  completed: false,
+};
 
- 
+  // ensure UserData is an array
+  if (!Array.isArray(UserData)) {
+    console.error('UserData is not an array', UserData);
+    return;
+  }
 
   // create an updated employees array immutably
   const updatedEmployees = UserData.map(emp => {
     if (emp.firstName === asignTo) {
-     
+      // safe new tasks array
       const updatedTasks = Array.isArray(emp.tasks) ? [...emp.tasks, newTask] : [newTask];
 
       // safe increment (handles missing or non-numeric values)
       const updatedTaskCounts = {
         ...emp.taskCounts,
-        NewTask: (Number(emp.taskCounts?.NewTask) || 0) + 1
+        newTask: (Number(emp.taskCounts?.newTask) || 0) + 1
       };
 
       return {
@@ -60,7 +65,8 @@ const [NewTask, setNewTask] = useState({})
     // fallback direct localStorage
     localStorage.setItem('employees', JSON.stringify(updatedEmployees));
   }
- console.log(updatedEmployees)
+
+  console.log(updatedEmployees)
 
   // reset form fields
   setTaskTitle('');
@@ -69,6 +75,7 @@ const [NewTask, setNewTask] = useState({})
   setCategory('');
   setAsignTo('');
 }
+
   
   return (
     <div className="py-10 ">

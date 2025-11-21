@@ -8,7 +8,7 @@ import { Authcontext } from "./context/AuthProvider";
 const App = () => {
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null)
-  const AuthData = useContext(Authcontext);
+  const [userData,SetUserData] = useContext(Authcontext);
 
   useEffect(() => {
       const loggedInUser = localStorage.getItem("loggedInUser");
@@ -31,8 +31,8 @@ const App = () => {
       localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
     }
 
-     else if (AuthData) {
-        const employee =  AuthData.find((e) => email == e.email && e.password == password)
+     else if (userData) {
+        const employee =  userData.find((e) => email == e.email && e.password == password)
         if(employee){
       setUser("employee");
       setLoggedInUserData(employee)

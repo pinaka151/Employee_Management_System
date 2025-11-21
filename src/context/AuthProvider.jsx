@@ -5,7 +5,7 @@ export const Authcontext = createContext()
 
 const AuthProvider = ({children}) => {
   // localStorage.clear()
-    const [UserData, setUserData] = useState([])
+    const [UserData, setUserData] = useState({})
 
     
    
