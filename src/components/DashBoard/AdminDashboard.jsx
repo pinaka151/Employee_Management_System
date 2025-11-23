@@ -7,7 +7,7 @@ import AllTask from "../other/AllTask";
 const AdminDashboard = (props) => {
   return (
     <div className="h-screen w-full p-10">
-      <HEADER changeUser = {props.changeUser} />
+      <HEADER changeUser = {props.changeUser} firstName = "vipin" />
       <CreateTask />
       <AllTask />
     </div>
