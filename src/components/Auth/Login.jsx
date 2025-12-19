@@ -20,8 +20,8 @@ const[Pass,SetPassword] = useState('')
   }
 
   return (
-    <div className='border-1 border-white flex h-screen w-screen justify-center items-center'>
-      <div className="border-2 w-2xl h-[40] rounded-2xl border-emerald-600 flex justify-center items-center py-40">
+    <div className='border-1 border-white flex h-screen w-screen justify-center  items-center'>
+      <div className="border-2 w-2xl h-[40] img rounded-2xl border-emerald-600 flex justify-center items-center py-40">
         <form onSubmit={(e)=>{
            SubmitHandler(e)
         }} className='flex flex-col items-center justify-center gap-3'>

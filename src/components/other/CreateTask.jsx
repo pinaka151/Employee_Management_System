@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { Authcontext } from "../../context/AuthProvider";
 
-const CreateTask = () => {
+const CreateTask = ({setShowCreateTask }) => {
 const [UserData,setUserData] = useContext(Authcontext)
 
 const [taskTitle, setTaskTitle] = useState("")
@@ -88,9 +88,12 @@ const newTask = {
         <div className="flex w-full overflow-hidden">
           <div className="w-1/2 pl-2.5">
             <div className="flex pb-7 pt-0 text-2xl items-center gap-2">
-              <FaArrowCircleLeft className="cursor-pointer" />
-              <h1> Create Task </h1>
-            </div>
+        <FaArrowCircleLeft
+          onClick={() => setShowCreateTask(false)}
+          className="cursor-pointer"
+        />
+        <h1>Create Task</h1>
+      </div>
 
             <div>
               <h3>Task Title</h3>

@@ -8,7 +8,7 @@ const Header = (props) => {
  }
 if (props.data) {
     return (
-      <div className='flex items-end justify-between top-10 '>
+      <div className='flex items-end justify-between head  top-10 '>
         <h1 className='font-medium'>
           Hello!! <br />
           <span className='text-3xl font-semibold'>{props.data.firstName} 👋</span>

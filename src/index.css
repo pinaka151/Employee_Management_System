@@ -31,6 +31,16 @@ body{
   display: none;               
 }
 
+.img{
+  background-image: url("./assets/asset+32.png");
+   /* background-image: url("/src/assets/asset+32.png"); */
+  background-repeat: repeat;
+  background-size: 920px 920px;  /* 👈 reduce this value */
+  /* height: fit-content; */
+}
+
+
+
 
 
 
