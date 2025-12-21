@@ -7,7 +7,7 @@ import AllTask from "../other/AllTask";
 const AdminDashboard = (props) => {
   const [showCreateTask, setShowCreateTask] = useState(true);
   return (
-    <div className="h-screen w-full  img p-10">
+    <div className=" h-screen w-full  img p-10">
       <HEADER changeUser = {props.changeUser} firstName = "vipin" />
       {!showCreateTask && (
         <div
