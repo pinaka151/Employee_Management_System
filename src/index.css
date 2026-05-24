@@ -35,14 +35,12 @@ body{
   background-image: url("./assets/asset+32.png");
    /* background-image: url("/src/assets/asset+32.png"); */
   background-repeat: repeat;
-  background-size: 920px 920px;  /* 👈 reduce this value */
+  background-size: 920px 920px; 
   /* height: fit-content; */
 }
 
 .firstImage{
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-    url("./assets/firstimage.png");
+  background-image:linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),url("./assets/firstimage.png");
   background-repeat: repeat;
   background-size: 520px 520px; 
    
